@@ -51,7 +51,7 @@ class RestaurantCard extends StatelessWidget {
       ),
       onTap: () async {
         RestaurantDesc restaurant =
-            await ApiService().restaurantDetailApi(restaurants.id);
+            (await ApiService().restaurantDetailApi(restaurants.id)) as RestaurantDesc;
 
         Navigator.pushNamed(context, RestaurantDetailPage.routeName,
             arguments: restaurant);

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../data/api/api_service.dart';
-import '../data/model/restaurant.dart';
+import '../data/model/restaurant_reseach.dart';
 
 enum RestaurantState { loading, noData, hasData, error }
 
 class ProviderSearch extends ChangeNotifier {
-  late final ApiService searchApiService;
+  final ApiService searchApiService;
 
   ProviderSearch({required this.searchApiService}) {
     feacthSearchRestaurant(query);

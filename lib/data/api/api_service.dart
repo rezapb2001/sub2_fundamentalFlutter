@@ -1,6 +1,8 @@
 import 'dart:convert';
 import '../model/restaurant.dart';
 import 'package:http/http.dart' as http;
+import '../model/restaurant_detail.dart';
+import '../model/restaurant_reseach.dart';
 
 class ApiService {
   static const String _urlBase = 'https://restaurant-api.dicoding.dev';
@@ -14,7 +16,7 @@ class ApiService {
     }
   }
 
-  Future<RestaurantDesc> restaurantDetailApi(String id) async {
+  Future<RestaurantDetail> restaurantDetailApi(String id) async {
     final response = await http.get(Uri.parse(_urlBase + '/detail/$id'));
     if (response.statusCode == 200) {
       return ResponResto.fromJson(json.decode(response.body)).restaurant;

@@ -1,10 +1,10 @@
-import 'package:restaurant_app/data/model/restaurant.dart';
 import 'package:flutter/material.dart';
+import '../data/model/restaurant_detail.dart';
 
 class RestaurantDetailPage extends StatelessWidget {
   static const routeName = '/restaurant_detail';
 
-  final RestaurantDesc restaurant;
+  final RestaurantDetail restaurant;
 
   const RestaurantDetailPage({required this.restaurant});
 
@@ -16,19 +16,15 @@ class RestaurantDetailPage extends StatelessWidget {
         flexibleSpace: Container(
           decoration: const BoxDecoration(
               gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: <Color>[Colors.green, Colors.blue])),
+                  begin: Alignment.topLeft, end: Alignment.bottomRight, colors: <Color>[Colors.green, Colors.blue])),
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Hero(
-              tag:
-                  'https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}',
-              child: Image.network(
-                  'https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}'),
+              tag: 'https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}',
+              child: Image.network('https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}'),
             ),
             Padding(
               padding: const EdgeInsets.all(10),
