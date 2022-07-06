@@ -1,23 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:restaurant_app/data/api/api_service.dart';
-import 'package:restaurant_app/data/model/restaurant.dart';
+import '../data/model/restaurant_detail.dart';
 
 enum ResultState { Loading, NoData, HasData, Error }
 
-class RestaurantProvider extends ChangeNotifier {
+class RestaurantDetailProvider extends ChangeNotifier {
   final ApiService apiservice;
+  final String id;
 
-  RestaurantProvider({required this.apiservice}) {
+  RestaurantDetailProvider({required this.apiservice, required this.id}) {
     _fetchAllRestaurant();
   }
 
-  late Restaurant _restaurant;
+  late ResponResto _restaurant;
   late ResultState _state;
   String _message = '';
 
   String get message => _message;
 
-  Restaurant get result => _restaurant;
+  ResponResto get result => _restaurant;
 
   ResultState get state => _state;
 
@@ -25,8 +26,8 @@ class RestaurantProvider extends ChangeNotifier {
     try {
       _state = ResultState.Loading;
       notifyListeners();
-      final restaurant = await apiservice.apiRestaurant();
-      if (restaurant.restaurants.isEmpty) {
+      final restaurant = await apiservice.restaurantDetailApi(id);
+      if (restaurant.message.isEmpty) {
         _state = ResultState.NoData;
         notifyListeners();
         return _message = 'Empty Data';

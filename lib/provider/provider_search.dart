@@ -43,7 +43,7 @@ class ProviderSearch extends ChangeNotifier {
     } catch (e) {
       _restaurantState = RestaurantState.error;
       notifyListeners();
-      return _message = 'Not connected to the internet...';
+      return _message = 'Immediately Connect to the Internet';
     }
   }
 }

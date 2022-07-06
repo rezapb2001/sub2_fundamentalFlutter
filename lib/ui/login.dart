@@ -18,6 +18,12 @@ class _LoginState extends State<Login> {
         style: TextStyle(
         fontSize: 25,
       ),),
+      content: Container(
+        child: Text(" Selamat datang kembali, Semoga harimu menyenangkan, Jangan lupa makan ya...",
+          style: TextStyle(
+            fontSize: 15,
+          ),),
+      ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage())),

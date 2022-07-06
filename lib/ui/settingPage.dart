@@ -10,54 +10,6 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [
-        Material(
-          child: ListTile(
-            title: const Text('Dark Theme'),
-            trailing: Switch.adaptive(
-              value: false,
-              onChanged: (value) {
-                defaultTargetPlatform == TargetPlatform.android
-                    ? showDialog(
-                  context: context,
-                  barrierDismissible: true,
-                  builder: (context) {
-                    return AlertDialog(
-                      title: const Text('Coming Soon!'),
-                      content: const Text('This feature will be coming soon!'),
-                      actions: [
-                        CupertinoDialogAction(
-                          child: const Text('Ok'),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                      ],
-                    );
-                  },
-                )
-                    : showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      title: const Text('Coming Soon!'),
-                      content: const Text('This feature will be coming soon!'),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Text('Ok'),
-                        ),
-                      ],
-                    );
-                  },
-                );
-              },
-            ),
-          ),
-        )
-      ],
-    );
+        );
   }
 }

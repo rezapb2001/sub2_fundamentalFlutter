@@ -34,17 +34,17 @@ class _HomePageState extends State<HomePage> {
   final List<BottomNavigationBarItem> _bottomNavbarItems = [
     const BottomNavigationBarItem(
       icon: Icon(Icons.home_outlined),
-      activeIcon: Icon(Icons.home),
+      activeIcon: Icon(Icons.home, color: Colors.cyan),
       label: 'Home',
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.search_outlined),
-      activeIcon: Icon(Icons.search),
+      activeIcon: Icon(Icons.search, color: Colors.cyan),
       label: 'Search',
     ),
     const BottomNavigationBarItem(
         icon: Icon(Icons.settings_outlined),
-        activeIcon: Icon(Icons.settings),
+        activeIcon: Icon(Icons.settings, color: Colors.cyan),
         label: 'Settings'),
   ];
 

@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:restaurant_app/data/api/api_service.dart';
 import '../data/model/restaurant.dart';
 import 'package:flutter/material.dart';
-import '../ui/detailpage.dart';
+import '../ui/restaurant_detailpage.dart';
 
 class RestaurantCard extends StatelessWidget {
   final RestaurantDesc restaurants;
@@ -49,12 +48,8 @@ class RestaurantCard extends StatelessWidget {
           ],
         ),
       ),
-      onTap: () async {
-        RestaurantDesc restaurant =
-            (await ApiService().restaurantDetailApi(restaurants.id)) as RestaurantDesc;
-
-        Navigator.pushNamed(context, RestaurantDetailPage.routeName,
-            arguments: restaurant);
+      onTap: () {
+        Navigator.pushNamed(context, RestaurantDetailPage.routeName, arguments: restaurants);
       },
     ));
   }

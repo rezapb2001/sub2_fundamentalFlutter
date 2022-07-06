@@ -25,12 +25,8 @@ class _WidgetSearchState extends State<WidgetSearch> {
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: <Color>[Colors.green, Colors.blue],
-                    ),
-                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(25),
                   ),
                   child: ListTile(
                     leading: const Icon(

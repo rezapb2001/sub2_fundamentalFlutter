@@ -25,7 +25,7 @@ class SearchPage extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   Positioned(
-                    height: 28.0,
+                    bottom: 60.0,
                     left: 0.0,
                     right: 0.0,
                     child: connected
@@ -34,10 +34,9 @@ class SearchPage extends StatelessWidget {
                       child: Container(),
                     )
                         : Container(
-                      color: Colors.red,
                       child: const Center(
                         child: Text(
-                          "Loss Connection",
+                          "Connection Loss",
                         ),
                       ),
                     ),
@@ -52,7 +51,7 @@ class SearchPage extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children:const [
                                   WidgetSearch(),
-                                  SizedBox(height: 20),
+                                  SizedBox(height: 25),
                                   Flexible(
                                     child: RestaurantSearch(),
                                   ),

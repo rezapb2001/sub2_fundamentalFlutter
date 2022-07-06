@@ -14,7 +14,7 @@ class RestaurantSearch extends StatelessWidget {
       builder: (context, state, _) {
         if (state.restaurantState == RestaurantState.loading) {
           return const CircularProgressIndicator(
-            color: Colors.blue,
+            color: Colors.cyan,
           );
         } else if (state.restaurantState == RestaurantState.hasData) {
           return ListView.builder(

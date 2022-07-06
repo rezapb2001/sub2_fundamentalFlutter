@@ -8,11 +8,10 @@ class RestaurantListPage extends StatelessWidget {
 
   Widget _buildList() {
     return Consumer<RestaurantProvider>(builder: (context, state, _) {
-      // ignore: unrelated_type_equality_checks
-      if (state == ResultState.Loading) {
+      if (state.state == ResultState.Loading) {
         return const Center(
             child: CircularProgressIndicator(
-              color: Colors.green,
+              color: Colors.cyan,
             ));
       } else {
         if (state.state == ResultState.HasData) {
